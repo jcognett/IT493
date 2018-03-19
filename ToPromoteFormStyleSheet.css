@@ -2,6 +2,10 @@ input[type=number] {
     width: 20%;
 }
 
+logo{
+	width:auto;
+}
+
 table {
     width:100%;
 }

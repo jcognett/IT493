@@ -1,10 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<?php
+   ob_start();
+   session_start();
+?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Glory Days Product Request Form</title>
 <link rel = "stylesheet" type="text/css"  href= "ToPromoteFormStyleSheet.css">
+<img src="https://commonmedia.asicentral.com/160000/164530/ToPromote%20Logo%20200x70.png" id = "logo"><br/>
+Phone: 703-205-3890
 <body>
 <form action="submit.php" method="post">
+Location<input type="text" name="Location"/><br/>
+Ordered By<input type="text" name="Name"/><br/>
+RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush"/>
+
 <table style="width:100%" id = "Printer">
 	<tr>
 		<th>Printer Toner / Similar</th>
@@ -358,7 +368,7 @@ NOTE: ALL MARKETING ORDERS must be ordered through Marketing.
 		<td><input type="number" name="SS-Knob" /></td>
 	</tr>
 </table>
-NOTE: Please Visit LINK for Speaker/Charger handling instructions
+NOTE: <a href="SpeakerReturns.pdf">Click here for a printable pdf on speaker returns</a>
 <br/><br/>
 <table style="width:100%" id = "Signage">
 	<tr>
@@ -381,6 +391,7 @@ NOTE: Please Visit LINK for Speaker/Charger handling instructions
 	</tr>
 </table>
 <br/>
+<textarea name="Notes" rows="10" cols="50"></textarea><br/>
 <input type="submit" />
 </form>
 </body>
