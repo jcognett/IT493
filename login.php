@@ -12,6 +12,7 @@
    
    <head>
       <title>ToPromote Login</title>
+	  <link rel = "stylesheet" type="text/css"  href= "ToPromoteFormStyleSheet.css">
    </head>
 	
    <body>
@@ -52,8 +53,8 @@
             <input type = "password" class = "form-control"
                name = "password" placeholder = "Password" required><br/>
             <button type = "submit" 
-               name = "login">Login</button>
-			<button type = "reset" >Cancel</button>
+               name = "login" class="button loginbutton">Login</button>
+			<button type = "reset" class="button resetbutton">Cancel</button>
          </form>
       </div> 
       
