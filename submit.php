@@ -9,6 +9,13 @@
 	
 	$email = "";
 	$subject = "";
+	$emailAddress = "";
+	$emailAddressFlag = "";
+	
+	if($_POST['EmailAddress'] != null){
+		$emailAddress = $_POST['EmailAddress'];
+		$emailAddressFlag = true;
+	}
 	
 	//Extra info
 	if($_POST['Rush']){
@@ -138,6 +145,7 @@
 	}
 	
 	
+	echo "<h1> Your Order has been placed </h1><br/>";
 	
 	$email .= "Manager Name:" . $_POST['Name'] . PHP_EOL . $address . PHP_EOL;
 	
@@ -479,7 +487,7 @@
 	
 	//Signs
 	if ($_POST['SignFlag'] != ""){
-		echo "For Signs please call ToPromote directly at 703-250-3890";
+		echo "For Signs please call ToPromote directly at 703-250-3890<br/>";
 	}
 	
 	if($_POST['Notes') !=""){
@@ -488,17 +496,19 @@
 	
 	$day = date('d-m-Y');
 	
-	echo $email;
-	
 	if ($_POST['ChefFlag'] != ""){
 		$email .= "Expect call regarding Chef Uniform" . PHP_EOL;
+		echo "For Chef Uniforms call ToPromote directly at 703-250-3890<br/>"
 	}
 	
 	if ($_POST['SignFlag'] != ""){
 		$email .= "Expect call regarding Signage" . PHP_EOL;
+		echo "For Supplementary signage please call ToPromote directly at 703-250-3890<br/>"
 	}
 	
-	
+	if ($emailAddressFlag){
+		mail($emailAddress, $subject . 'Product Request ' . $day, $email);
+	}
 	
 	mail('jcognett@gmu.edu', $subject . 'Product Request ' . $day, $email);
 ?>

@@ -13,6 +13,7 @@ Phone: 703-205-3890
 <form action="submit.php" method="post">
 Location<input type="text" name="Location"/><br/>
 Ordered By<input type="text" name="Name"/><br/>
+Email Receipt<input type="text" name="EmailAddress"/><br/>
 RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush"/>
 
 <table style="width:100%" id = "Printer">
