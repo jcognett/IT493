@@ -471,7 +471,7 @@
 	$email .= "Speaker and Accessories" . PHP_EOL;
 	if ($_POST['SS-100194'] != ""){
 		$email .= 'SS-100194 Speaker/Charger Exchange Fee' . PHP_EOL . "Quantity: " . $_POST['SS-100194'] . PHP_EOL;
-		echo "<a href='SpeakerReturns.pdf'>Click here for a printable pdf on speaker returns</a>"
+		echo "<a href='SpeakerReturns.pdf'>Click here for a printable pdf on speaker returns</a>";
 	}
 	if ($_POST['SS-Knob'] != ""){
 		$email .= "SS-Knob Speaker Volume Nob" . PHP_EOL . "Quantity: " . $_POST['SS-Knob'] . PHP_EOL;
