@@ -49,9 +49,9 @@
             <h4><?php echo $msg; ?></h4>
             <input type = "text"  
                name = "username" placeholder = "Username" 
-               required autofocus></br>
+               required autofocus></br></br>
             <input type = "password" class = "form-control"
-               name = "password" placeholder = "Password" required><br/>
+               name = "password" placeholder = "Password" required><br/></br>
             <button type = "submit" 
                name = "login" class="button loginbutton">Login</button>
 			<button type = "reset" class="button resetbutton">Cancel</button>
