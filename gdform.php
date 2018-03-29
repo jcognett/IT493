@@ -13,8 +13,13 @@ Phone: 703-205-3890
 <form action="submit.php" method="post" id="ToPromoteForm">
 Location<input type="text" name="Location"/><br/>
 Ordered By<input type="text" name="Name"/><br/>
+<<<<<<< HEAD
+RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush" value="True"/><br/>
+Pickup<input type="checkbox" name="Pickup" value="True"/>Time:<input type="text" name="picktime" />
+=======
 Email Receipt<input type="text" name="EmailAddress"/><br/>
 RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush"/>
+>>>>>>> bd267b313f0f7046379e7411e8fc5c2784ff8b4d
 
 <table style="width:100%" id = "Printer">
 	<tr>
@@ -22,6 +27,12 @@ RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush"/>
 		<th>Unit</th> 
 		<th>Price</th>
 		<th>Quantity</th>
+	</tr>
+	<tr>
+		<td>Tamper-Evident Deposit Bags w/ Serial#, 9x12</td>
+		<td>100 Bags</td> 
+		<td>$21.99</td>
+		<td><input type="number" name="N53866" /></td>
 	</tr>
 	<tr>
 		<td>Tamper-Evident Deposit Bags w/ Serial#, 9x12</td>
