@@ -45,7 +45,7 @@
       
          <form
             action = "<?php echo htmlspecialchars($_SERVER['PHP_SELF']); 
-            ?>" method = "post">
+            ?>" method = "post" id="login">
             <h4><?php echo $msg; ?></h4>
             <input type = "text"  
                name = "username" placeholder = "Username" 

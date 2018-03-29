@@ -10,7 +10,7 @@
 <img src="https://commonmedia.asicentral.com/160000/164530/ToPromote%20Logo%20200x70.png" id = "logo"><br/>
 Phone: 703-205-3890
 <body>
-<form action="submit.php" method="post">
+<form action="submit.php" method="post" id="ToPromoteForm">
 Location<input type="text" name="Location"/><br/>
 Ordered By<input type="text" name="Name"/><br/>
 Email Receipt<input type="text" name="EmailAddress"/><br/>

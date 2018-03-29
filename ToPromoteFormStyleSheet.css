@@ -75,9 +75,13 @@ input:focus {
 
 h2{
  text-align: center;
-
 }
 
-form{
- text-align: center;	
+
+form#login{
+ text-align: center;
+}
+
+form#ToPromoteForm{
+	text-align: left;
 }
