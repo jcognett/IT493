@@ -9,7 +9,17 @@
 	
 	$email = "";
 	$subject = "";
+<<<<<<< HEAD
 	$receipt = "";
+=======
+	$emailAddress = "";
+	$emailAddressFlag = "";
+	
+	if($_POST['EmailAddress'] != null){
+		$emailAddress = $_POST['EmailAddress'];
+		$emailAddressFlag = true;
+	}
+>>>>>>> bd267b313f0f7046379e7411e8fc5c2784ff8b4d
 	
 	//Extra info
 	if($_POST['Rush'] == 'True'){
@@ -178,6 +188,7 @@
 	}
 	
 	
+	echo "<h1> Your Order has been placed </h1><br/>";
 	
 	$email .= "Manager Name:" . $_POST['Name'] . PHP_EOL . $addressEmail . PHP_EOL;
 	$receipt .= "Manager Name:" . $_POST['Name'] . '<br/>' . $addressEmail . '<br/>';
@@ -627,7 +638,7 @@
 	
 	//Signs
 	if ($_POST['SignFlag'] != ""){
-		echo "For Signs please call ToPromote directly at 703-250-3890";
+		echo "For Signs please call ToPromote directly at 703-250-3890<br/>";
 	}
 	
 	if($_POST['Notes'] !=""){
@@ -637,17 +648,24 @@
 	
 	$day = date('d-m-Y');
 	
+<<<<<<< HEAD
 	echo $receipt;
 	
+=======
+>>>>>>> bd267b313f0f7046379e7411e8fc5c2784ff8b4d
 	if ($_POST['ChefFlag'] != ""){
 		$email .= "Expect call regarding Chef Uniform" . PHP_EOL;
+		echo "For Chef Uniforms call ToPromote directly at 703-250-3890<br/>"
 	}
 	
 	if ($_POST['SignFlag'] != ""){
 		$email .= "Expect call regarding Signage" . PHP_EOL;
+		echo "For Supplementary signage please call ToPromote directly at 703-250-3890<br/>"
 	}
 	
-	
+	if ($emailAddressFlag){
+		mail($emailAddress, $subject . 'Product Request ' . $day, $email);
+	}
 	
 	mail('jcognett@gmu.edu', $subject . 'Product Request ' . $day, $email);
 ?>
