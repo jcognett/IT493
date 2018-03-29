@@ -73,18 +73,3 @@ input:focus {
 	color:white;
 }
 
-h2{
- text-align: center;
-}
-
-form{
-text-align :left;	
-}
-
-form#login{
- text-align: center;
-}
-
-form#ToPromoteForm{
-	text-align: left;
-}
