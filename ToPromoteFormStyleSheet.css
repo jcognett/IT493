@@ -21,37 +21,37 @@ td, th {
 }
 
 table#Printer th {
-    background-color: LightGray;
+    background-color: #2e4e8f;
     color: white;
 }
 
 table#CustomPrints th {
-    background-color: LightGray;
+    background-color: #81c637;
     color: white;
 }
 
 table#Uniforms th {
-    background-color: LightGray;
+    background-color: #2e4e8f;
     color: white;
 }
 
 table#Accessories th {
-    background-color: LightGray;
+    background-color: #81c637;
     color: white;
 }
 
 table#Marketing th {
-    background-color: Gray;
+    background-color: #2e4e8f;
     color: white;
 }
 
 table#Speakers th {
-    background-color: LightGray;
+    background-color: #81c637;
     color: white;
 }
 
 table#Signage th {
-    background-color: LightGray;
+    background-color: #2e4e8f;
     color: white;
 }
 
@@ -73,5 +73,13 @@ input:focus {
 .resetbutton:hover{
 	background-color:red;
 	color:white;
+}
+
+#login{
+ text-align: center;
+}
+
+#ToPromoteForm{
+ text-align: left;
 }
 
