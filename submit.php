@@ -9,21 +9,23 @@
 	
 	$email = "";
 	$subject = "";
-<<<<<<< HEAD
 	$receipt = "";
-=======
+	
+	
 	$emailAddress = "";
-	$emailAddressFlag = "";
 	
 	if($_POST['EmailAddress'] != null){
 		$emailAddress = $_POST['EmailAddress'];
 		$emailAddressFlag = true;
 	}
->>>>>>> bd267b313f0f7046379e7411e8fc5c2784ff8b4d
 	
 	//Extra info
 	if($_POST['Rush'] == 'True'){
 		$subject .= "RUSH ";
+	}
+	
+	if($_POST['Pickup'] == 'True'){
+		$subject .= "Pickup ";
 	}
 	
 	$location = strtoupper($_POST['Location']);
@@ -39,7 +41,7 @@
 			$addressEmail = "Eldersburg" . PHP_EOL . "1348 Liberty Rd". PHP_EOL . "Eldersburg, MD 21784-6411" . PHP_EOL . "410-552-5160" . PHP_EOL;
 			$addressEcho = "Eldersburg" . '<br/>' . "1348 Liberty Rd". '<br/>' . "Eldersburg, MD 21784-6411" . '<br/>' . "410-552-5160" . '<br/>';
 			break;
-		case "ELLICOTT CITY":
+		case "ELLICOTT":
 			$addressEmail = "Ellicott City" . PHP_EOL . "10035 Baltimore National Pike". PHP_EOL . "Ellicott City, MD 21042" . PHP_EOL . "410-480-2300" . PHP_EOL;
 			$addressEcho = "Ellicott City" . '<br/>' . "10035 Baltimore National Pike". '<br/>' . "Ellicott City, MD 21042" . '<br/>' . "410-480-2300" . '<br/>';
 			break;
@@ -111,11 +113,11 @@
 			$addressEmail = "Manassas" . PHP_EOL . "9516 Liberia Ave". PHP_EOL . "Manassas, VA 20110-1719" . PHP_EOL . "703-361-9040" . PHP_EOL;
 			$addressEcho = "Manassas" . '<br/>' . "9516 Liberia Ave". '<br/>' . "Manassas, VA 20110-1719" . '<br/>' . "703-361-9040" . '<br/>';
 			break;
-		case "NORTH":
+		case "NORTHPOINT":
 			$addressEmail = "Reston at North Point Village Center" . PHP_EOL . "1400 North Point Village Center". PHP_EOL . "Reston, VA 20194" . PHP_EOL . "571-926-9700" . PHP_EOL;
 			$addressEcho = "Reston at North Point Village Center" . '<br/>' . "1400 North Point Village Center". '<br/>' . "Reston, VA 20194" . '<br/>' . "571-926-9700" . '<br/>';
 			break;
-		case "FOX MILL":
+		case "FOXMILL":
 			$addressEmail = "Reston/Herndon at Fox Mill Shopping Center" . PHP_EOL . "Fox Mill Shopping Center". PHP_EOL . "2567 John Milton Dr" . PHP_EOL . "Herndon, VA 20171-2527" . PHP_EOL . "703-390-5555" . PHP_EOL;
 			$addressEcho = "Reston/Herndon at Fox Mill Shopping Center" . '<br/>' . "Fox Mill Shopping Center". '<br/>' . "2567 John Milton Dr" . '<br/>' . "Herndon, VA 20171-2527" . '<br/>' . "703-390-5555" . '<br/>';
 			break;
@@ -151,7 +153,7 @@
 			$addressEmail = "4th Street, St Petersburg" . PHP_EOL . "9900 4th St". PHP_EOL . "St Petersburg, FL 33702" . PHP_EOL . "727-214-1623" . PHP_EOL;
 			$addressEcho = "4th Street, St Petersburg" . '<br/>' . "9900 4th St". '<br/>' . "St Petersburg, FL 33702" . '<br/>' . "727-214-1623" . '<br/>';
 			break;
-		case "ST PETERSBURG":
+		case "STPETERSBURG":
 			$addressEmail = "4th Street, St Petersburg" . PHP_EOL . "9900 4th St". PHP_EOL . "St Petersburg, FL 33702" . PHP_EOL . "727-214-1623" . PHP_EOL;
 			$addressEcho = "4th Street, St Petersburg" . '<br/>' . "9900 4th St". '<br/>' . "St Petersburg, FL 33702" . '<br/>' . "727-214-1623" . '<br/>';
 			break;
@@ -167,7 +169,7 @@
 			$addressEmail = "Lakeland" . PHP_EOL . "3790 Lakeside Village Ct". PHP_EOL . "Lakeland, FL 33803" . PHP_EOL . "863-225-8958" . PHP_EOL;
 			$addressEcho = "Lakeland" . '<br/>' . "3790 Lakeside Village Ct". '<br/>' . "Lakeland, FL 33803" . '<br/>' . "863-225-8958" . '<br/>';
 			break;
-		case "NEW TAMPA":
+		case "NEWTAMPA":
 			$addressEmail = "New Tampa" . PHP_EOL . "17508 Dona Michelle Dr". PHP_EOL . "Tampa, FL 33647" . PHP_EOL . "813-513-7550" . PHP_EOL;
 			$addressEcho = "New Tampa" . '<br/>' . "17508 Dona Michelle Dr". '<br/>' . "Tampa, FL 33647" . '<br/>' . "813-513-7550" . '<br/>';
 			break;
@@ -179,7 +181,7 @@
 			$addressEmail = "Odessa" . PHP_EOL . "16553 Pointe Village Dr". PHP_EOL . "Lutz, FL 33558" . PHP_EOL . "813-616-2600" . PHP_EOL;
 			$addressEcho = "Odessa" . '<br/>' . "16553 Pointe Village Dr". '<br/>' . "Lutz, FL 33558" . '<br/>' . "813-616-2600" . '<br/>';
 			break;
-		case "PALM HARBOR":
+		case "PALMHARBOR":
 			$addressEmail = "Palm Harbor" . PHP_EOL . "34200 US Highway 19 N". PHP_EOL . "Palm Harbor, FL 34684" . PHP_EOL . "727-216-6566" . PHP_EOL;
 			$addressEcho = "Palm Harbor" . '<br/>' . "34200 US Highway 19 N". '<br/>' . "Palm Harbor, FL 34684" . '<br/>' . "727-216-6566" . '<br/>';
 			break;
@@ -192,7 +194,6 @@
 	
 	$email .= "Manager Name:" . $_POST['Name'] . PHP_EOL . $addressEmail . PHP_EOL;
 	$receipt .= "Manager Name:" . $_POST['Name'] . '<br/>' . $addressEmail . '<br/>';
-	
 	
 	//Printer and Toner Supplies
 	$email .= "Printer and Toner Supplies" . PHP_EOL;
@@ -629,7 +630,7 @@
 	if ($_POST['SS-100194'] != ""){
 		$email .= 'SS-100194 Speaker/Charger Exchange Fee' . PHP_EOL . "Quantity: " . $_POST['SS-100194'] . PHP_EOL;
 		$receipt .= 'SS-100194 Speaker/Charger Exchange Fee' . '<br/>' . "Quantity: " . $_POST['SS-100194'] . '<br/>';
-		echo "<a href='../SpeakerReturns.pdf'>Click here for a printable pdf on speaker returns</a>";
+		echo "<a href='http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf'>Click here for a printable pdf on speaker returns</a>";
 	}
 	if ($_POST['SS-Knob'] != ""){
 		$email .= "SS-Knob Speaker Volume Nob" . PHP_EOL . "Quantity: " . $_POST['SS-Knob'] . PHP_EOL;
@@ -648,11 +649,8 @@
 	
 	$day = date('d-m-Y');
 	
-<<<<<<< HEAD
 	echo $receipt;
 	
-=======
->>>>>>> bd267b313f0f7046379e7411e8fc5c2784ff8b4d
 	if ($_POST['ChefFlag'] != ""){
 		$email .= "Expect call regarding Chef Uniform" . PHP_EOL;
 		echo "For Chef Uniforms call ToPromote directly at 703-250-3890<br/>"
@@ -661,10 +659,6 @@
 	if ($_POST['SignFlag'] != ""){
 		$email .= "Expect call regarding Signage" . PHP_EOL;
 		echo "For Supplementary signage please call ToPromote directly at 703-250-3890<br/>"
-	}
-	
-	if ($emailAddressFlag){
-		mail($emailAddress, $subject . 'Product Request ' . $day, $email);
 	}
 	
 	mail('jcognett@gmu.edu', $subject . 'Product Request ' . $day, $email);
