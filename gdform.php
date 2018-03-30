@@ -11,15 +11,39 @@
 Phone: 703-205-3890
 <body>
 <form action="submit.php" method="post" id="ToPromoteForm">
-Location<input type="text" name="Location"/><br/>
+Location<select>
+  <option value="Edgewater">Edgewater</option>
+  <option value="Eldersburg">Eldersburg</option>
+  <option value="Ellicott">Ellicott City</option>
+  <option value="Frederick">Frederick</option>
+  <option value="Pasadena">Glen Burnie/Pasadena</option>
+  <option value="Towson">Towson</option>
+  <option value="Ranson">Ranson/Charles Town</option>
+  <option value="Barcroft">Barcroft Plaza</option>
+  <option value="Burke">Burke</option>
+  <option value="Centreville">Centreville</option>
+  <option value="Culpeper">Culpeper</option>
+  <option value="Fairfax">Fairfax</option>
+  <option value="Gainesville">Gainesville</option>
+  <option value="Lorton">Lorton</option>
+  <option value="Manassas">Manassas</option>
+  <option value="NorthPoint">Reston at North Point Village Center</option>
+  <option value="FoxMill">Reston/Herndon at Fox Mill Shopping Center</option>
+  <option value="Gleneagles">Richmond at Gleneagles Center</option>
+  <option value="Harbourside">Richmond at Harbourside Centre Loop</option>
+  <option value="StoneRidge">Stone Ridge/South Riding</option>
+  <option value="APEX">APEX</option>
+  <option value="StPetersburg">4th Street, St Petersburg</option>
+  <option value="Brandon">Brandon</option>
+  <option value="Carrollwood">Carrollwood</option>
+  <option value="Lakeland">Lakeland</option>
+  <option value="NewTampa">New Tampa</option>
+  <option value="Odessa">Odessa</option>
+  <option value="PalmHarbor">Palm Harbor</option>
+</select>
 Ordered By<input type="text" name="Name"/><br/>
-<<<<<<< HEAD
 RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush" value="True"/><br/>
 Pickup<input type="checkbox" name="Pickup" value="True"/>Time:<input type="text" name="picktime" />
-=======
-Email Receipt<input type="text" name="EmailAddress"/><br/>
-RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush"/>
->>>>>>> bd267b313f0f7046379e7411e8fc5c2784ff8b4d
 
 <table style="width:100%" id = "Printer">
 	<tr>
@@ -127,6 +151,7 @@ RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush"/>
 		<td>$52.96</td>
 		<td><input type="number" name="900141-16AQ" /></td>
 	</tr>
+	Name and Info for Business Cards: <input type="Text" name="BCInfo"/>
 	<tr>
 		<td>Letterhead/Envalope Stationary, custom per store *</td>
 		<td>1000/Box</td> 
@@ -380,7 +405,7 @@ NOTE: ALL MARKETING ORDERS must be ordered through Marketing.
 		<td><input type="number" name="SS-Knob" /></td>
 	</tr>
 </table>
-NOTE: <a href="SpeakerReturns.pdf">Click here for a printable pdf on speaker returns</a>
+NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Click here for a printable pdf on speaker returns</a>
 <br/><br/>
 <table style="width:100%" id = "Signage">
 	<tr>
