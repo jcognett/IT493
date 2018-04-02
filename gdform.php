@@ -11,7 +11,7 @@
 Phone: 703-205-3890
 <body>
 <form action="submit.php" method="post" id="ToPromoteForm">
-Location<select>
+Location<select name="Location">
   <option value="Edgewater">Edgewater</option>
   <option value="Eldersburg">Eldersburg</option>
   <option value="Ellicott">Ellicott City</option>
@@ -42,8 +42,8 @@ Location<select>
   <option value="PalmHarbor">Palm Harbor</option>
 </select>
 Ordered By<input type="text" name="Name"/><br/>
-RUSH Shipping (Additional Fee)<input type="checkbox" name="Rush" value="True"/><br/>
-Pickup<input type="checkbox" name="Pickup" value="True"/>Time:<input type="text" name="picktime" />
+RUSH Shipping (Additional Fee)<input type="checkbox" name="RushShipping"/><br/>
+Pickup<input type="checkbox" name="Pickup" value="True"/>Time:<input type="text" name="PickTime" />
 
 <table style="width:100%" id = "Printer">
 	<tr>
@@ -151,7 +151,10 @@ Pickup<input type="checkbox" name="Pickup" value="True"/>Time:<input type="text"
 		<td>$52.96</td>
 		<td><input type="number" name="900141-16AQ" /></td>
 	</tr>
-	Name and Info for Business Cards: <input type="Text" name="BCInfo"/>
+	<tr>
+	<td>Name and Info for Business Cards:</td>
+	<td><input type="Text" name="BCInfo"/></td>
+	</tr>
 	<tr>
 		<td>Letterhead/Envalope Stationary, custom per store *</td>
 		<td>1000/Box</td> 
@@ -193,11 +196,19 @@ NOTE: Laser Voucher Checks & Deposit Slips orders must go through Accounting Off
 		<td><input type="number" name="400110" /></td>
 	</tr>
 	<tr>
+	<td>Name and Info for Name Tags:</td>
+	<td><input type="Text" name="NTInfo"/></td>
+	</tr>
+	<tr>
 		<td>HappyChef Black Coat, BK/WH Chalkstripe Pants *</td>
 		<td>Special</td> 
 		<td></td>
-		<td><input type="number" name="ChefFlag" /></td>
-	</tr>	
+		<td></td>
+	</tr>
+	<tr>
+	<td>Sizes for Chef Uniform:</td>
+	<td><input type="Text" name="HCInfo"/></td>
+	</tr>
 </table>
 <table style="width:100%">
 	<tr>
@@ -429,7 +440,7 @@ NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Clic
 </table>
 <br/>
 <textarea name="Notes" rows="10" cols="50"></textarea><br/>
-<input type="submit" />
+<input type="submit" /><input type="reset" />
 </form>
 </body>
 </html>

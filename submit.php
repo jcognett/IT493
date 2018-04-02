@@ -4,35 +4,27 @@
 <title>Glory Days Product Request Form</title>
 </head>
 <body>
-<h1>Test Version 1.1</h1>
+<h1>Test Version 1.2</h1>
 <?php
 	
 	$email = "";
 	$subject = "";
 	$receipt = "";
 	
-	
-	$emailAddress = "";
-	
-	if($_POST['EmailAddress'] != null){
-		$emailAddress = $_POST['EmailAddress'];
-		$emailAddressFlag = true;
-	}
-	
 	//Extra info
-	if($_POST['Rush'] == 'True'){
+	if(isset($RushShipping)){
 		$subject .= "RUSH ";
 	}
 	
-	if($_POST['Pickup'] == 'True'){
+	if(isset($Pickup)){
 		$subject .= "Pickup ";
 	}
 	
-	$location = strtoupper($_POST['Location']);
 	$addressEmail = "";
 	$addressEcho = "";
 	
-	switch ($location){
+	$Location = strtoupper($_POST['Location']);
+	switch ($Location){
 		case "EDGEWATER":
 			$addressEmail = "Edgewater" . PHP_EOL . "3 Lee Airpark Dr". PHP_EOL . "Edgewater, MD 21037" . PHP_EOL . "443-808-8880" . PHP_EOL;
 			$addressEcho = "Edgewater" . '<br/>' . "3 Lee Airpark Dr". '<br/>' . "Edgewater, MD 21037" . '<br/>' . "443-808-8880" . '<br/>';
@@ -186,14 +178,16 @@
 			$addressEcho = "Palm Harbor" . '<br/>' . "34200 US Highway 19 N". '<br/>' . "Palm Harbor, FL 34684" . '<br/>' . "727-216-6566" . '<br/>';
 			break;
 		default:
-			$addressEmail = $location;
+			$addressEmail = $_POST('Location');
 	}
-	
+
 	
 	echo "<h1> Your Order has been placed </h1><br/>";
 	
 	$email .= "Manager Name:" . $_POST['Name'] . PHP_EOL . $addressEmail . PHP_EOL;
-	$receipt .= "Manager Name:" . $_POST['Name'] . '<br/>' . $addressEmail . '<br/>';
+	$receipt .= "Manager Name:" . $_POST['Name'] . '<br/>' . $addressEcho . '<br/>';
+	
+	
 	
 	//Printer and Toner Supplies
 	$email .= "Printer and Toner Supplies" . PHP_EOL;
@@ -252,11 +246,11 @@
 	}
 
 	//Custom Prints
-	$email .= "Custom Prints" . PHP_EOL;
-	$receipt .="Custom Prints" . '<br/>';
+	$email .= PHP_EOL . "Custom Prints" . PHP_EOL;
+	$receipt .= '<br/>' . "Custom Prints" . '<br/>';
 	if ($_POST['900141-16AQ'] != ""){
-		$email .= "900141-16AQ Full Color Business Cards, 2-sided *" . PHP_EOL . "Quantity: " . $_POST['900141-16AQ'] . PHP_EOL;
-		$receipt .= "900141-16AQ Full Color Business Cards, 2-sided *" . '<br/>' . "Quantity: " . $_POST['900141-16AQ'] . '<br/>';
+		$email .= "900141-16AQ Full Color Business Cards, 2-sided *" . PHP_EOL . "Quantity: " . $_POST['900141-16AQ'] . PHP_EOL . $_POST['BCInfo'] .PHP_EOL;
+		$receipt .= "900141-16AQ Full Color Business Cards, 2-sided *" . '<br/>' . "Quantity: " . $_POST['900141-16AQ'] . '<br/>' .$_POST['BCInfo'] . '<br/>';
 	}
 	if ($_POST['900182'] != ""){
 		$email .= "900182 Letterhead/Envalope Stationary, custom per store *" . PHP_EOL . "Quantity: " . $_POST['900182'] . PHP_EOL;
@@ -269,6 +263,7 @@
 	
 	//Uniforms
 	$email .= "Uniforms" . PHP_EOL;
+	$receipt .='<br/>' . 'Uniforms' . '<br/>';
 	if ($_POST['600281-H'] != ""){
 		$email .= "600281-H Premium Low-Profile Cap, Embroidered" . PHP_EOL . "Quantity: " . $_POST['600281-H'] . PHP_EOL;
 		$receipt .= "600281-H Premium Low-Profile Cap, Embroidered" . '<br/>' . "Quantity: " . $_POST['600281-H'] . '<br/>';
@@ -278,11 +273,11 @@
 		$receipt .= "600283 Apron, 3-Pockets, Black" . '<br/>' . "Quantity: " . $_POST['600283'] . '<br/>';
 	}
 	if ($_POST['400110'] != ""){
-		$email .= "400110 Color Nametag with Magnetic Black, Personalized *" . PHP_EOL . "Quantity: " . $_POST['400110'] . PHP_EOL;
-		$receipt .= "400110 Color Nametag with Magnetic Black, Personalized *" . '<br/>' . "Quantity: " . $_POST['400110'] . '<br/>';
+		$email .= "400110 Color Nametag with Magnetic Black, Personalized *" . PHP_EOL . "Quantity: " . $_POST['400110'] . PHP_EOL . $_POST['NTInfo'];
+		$receipt .= "400110 Color Nametag with Magnetic Black, Personalized *" . '<br/>' . "Quantity: " . $_POST['400110'] . '<br/>' . $_POST['NTInfo'] .'<br/>';
 	}
-	if ($_POST['ChefFlag'] != ""){
-		echo "For Chef uniform please call ToPromote directly at 703-250-3890";
+	if ($_POST['HCInfo'] != ""){
+		$email .= "Happy Chef Uniform(s):". PHP_EOL . $_POST['HCInfo'] . PHP_EOL;
 	}
 	//Mens Red T-Shirt
 	if ($_POST['REDMSTSxs'] != "" || $_POST['REDMSTSs'] != "" || $_POST['REDMSTSm'] != "" || $_POST['REDMSTSl'] != "" || $_POST['REDMSTSxl'] != "" || $_POST['REDMSTS2xl'] != "" || $_POST['REDMSTS3xl'] != "" || $_POST['REDMSTS4xl'] != "" || $_POST['REDMSTS5xl'] != "" || $_POST['REDMSTS6xl'] != ""){
@@ -561,8 +556,8 @@
 	}
 	
 	//Accessories/Kids Toys
-	$email .= "Accessories and Kids Toys" . PHP_EOL;
-	$receipt .= "Accessories and Kids Toys" . '<br/>';
+	$email .= PHP_EOL . "Accessories and Kids Toys" . PHP_EOL;
+	$receipt .= '<br/>' . "Accessories and Kids Toys" . '<br/>';
 	if ($_POST['600400-Shk'] != ""){
 		$email .= '600400-Shk Gray Sharks, 6"' . PHP_EOL . "Quantity: " . $_POST['600400-Shk'] . PHP_EOL;
 		$receipt .= '600400-Shk Gray Sharks, 6"' . '<br/>' . "Quantity: " . $_POST['600400-Shk'] . '<br/>';
@@ -597,8 +592,8 @@
 	}
 	
 	//Marketing Items
-	$email .= "Marketing Items" . PHP_EOL;
-	$receipt .= "Marketing Items" . '<br/>';
+	$email .= PHP_EOL . "Marketing Items" . PHP_EOL;
+	$receipt .= '<br/>' . "Marketing Items" . '<br/>';
 	if ($_POST['CoachS'] != "" || $_POST['CoachM'] != "" || $_POST['CoachL'] != "" || $_POST['CoachXL'] != "" || $_POST['Coach2XL'] != ""){
 		$email .= "Coach Shirt" . PHP_EOL;
 		$receipt .= "Coach Shirt" . '<br/>';
@@ -625,8 +620,8 @@
 	}
 	
 	//Speakers and Accessories
-	$email .= "Speaker and Accessories" . PHP_EOL;
-	$receipt .= "Speaker and Accessories" . '<br/>';
+	$email .= PHP_EOL . "Speaker and Accessories" . PHP_EOL;
+	$receipt .= '<br/>' . "Speaker and Accessories" . '<br/>';
 	if ($_POST['SS-100194'] != ""){
 		$email .= 'SS-100194 Speaker/Charger Exchange Fee' . PHP_EOL . "Quantity: " . $_POST['SS-100194'] . PHP_EOL;
 		$receipt .= 'SS-100194 Speaker/Charger Exchange Fee' . '<br/>' . "Quantity: " . $_POST['SS-100194'] . '<br/>';
@@ -639,7 +634,8 @@
 	
 	//Signs
 	if ($_POST['SignFlag'] != ""){
-		echo "For Signs please call ToPromote directly at 703-250-3890<br/>";
+		$email .= "The Store has also requested Signs" . PHP_EOL;
+		$receipt .= "Expect a call regarding the requested signs. <br/>";
 	}
 	
 	if($_POST['Notes'] !=""){
@@ -651,19 +647,7 @@
 	
 	echo $receipt;
 	
-	if ($_POST['ChefFlag'] != ""){
-		$email .= "Expect call regarding Chef Uniform" . PHP_EOL;
-		echo "For Chef Uniforms call ToPromote directly at 703-250-3890<br/>"
-	}
-	
-	if ($_POST['SignFlag'] != ""){
-		$email .= "Expect call regarding Signage" . PHP_EOL;
-		echo "For Supplementary signage please call ToPromote directly at 703-250-3890<br/>"
-	}
-	
 	mail('jcognett@gmu.edu', $subject . 'Product Request ' . $day, $email);
 ?>
-<br/>
-<hr/>
 </body>
 </html>
