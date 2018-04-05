@@ -8,7 +8,8 @@
 <title>Glory Days Product Request Form</title>
 <link rel = "stylesheet" type="text/css"  href= "ToPromoteFormStyleSheet.css">
 <img src="https://commonmedia.asicentral.com/160000/164530/ToPromote%20Logo%20200x70.png" id = "logo"><br/>
-Phone: 703-205-3890
+Phone: 703-205-3890 <br/>
+Form Date: 4/2/2018
 <body>
 <form action="submit.php" method="post" id="ToPromoteForm">
 Location<select name="Location">
@@ -56,19 +57,13 @@ Pickup<input type="checkbox" name="Pickup" value="True"/>Time:<input type="text"
 		<td>Tamper-Evident Deposit Bags w/ Serial#, 9x12</td>
 		<td>100 Bags</td> 
 		<td>$21.99</td>
-		<td><input type="number" name="N53866" /></td>
-	</tr>
-	<tr>
-		<td>Tamper-Evident Deposit Bags w/ Serial#, 9x12</td>
-		<td>100 Bags</td> 
-		<td>$21.99</td>
-		<td><input type="number" name="N53866" /></td>
+		<td><input type="number" name="N53866"/></td>
 	</tr>
 	<tr>
 		<td>Printer / Copier Paper</td>
 		<td>500/Ream</td> 
 		<td>$3.69</td>
-		<td><input type="number" name="900185" /></td>
+		<td><input type="number" name="900185"/></td>
 	</tr>
 	<tr>
 		<td>HP LaserJet P2035, P2055 *   [05A]</td>
@@ -439,8 +434,11 @@ NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Clic
 	</tr>
 </table>
 <br/>
-<textarea name="Notes" rows="10" cols="50"></textarea><br/>
-<input type="submit" /><input type="reset" />
+Comments:<br/>
+<textarea name="Notes" rows="10" cols="50"></textarea><br/><br/>
+NOTE: Pressing submit will place the order, please "Save" your work and review this form before submitting. <br/>
+<input type="button" value="Save" /> <input type="submit" /> <input type="reset" />
+<br/><br/><br/>
 </form>
 </body>
 </html>
