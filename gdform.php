@@ -1,7 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <?php
    ob_start();
-   session_start();
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
@@ -42,7 +41,7 @@ Location<select name="Location">
   <option value="Odessa">Odessa</option>
   <option value="PalmHarbor">Palm Harbor</option>
 </select>
-Ordered By<input type="text" name="Name"/><br/>
+Ordered By<input type="text" name="Name" required/><br/>
 RUSH Shipping (Additional Fee)<input type="checkbox" name="RushShipping"/><br/>
 Pickup<input type="checkbox" name="Pickup" value="True"/>Time:<input type="text" name="PickTime" />
 
@@ -437,7 +436,7 @@ NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Clic
 Comments:<br/>
 <textarea name="Notes" rows="10" cols="50"></textarea><br/><br/>
 NOTE: Pressing submit will place the order, please "Save" your work and review this form before submitting. <br/>
-<input type="button" value="Save" /> <input type="submit" /> <input type="reset" />
+<input type="submit" value="Save" /> <input type="reset" />
 <br/><br/><br/>
 </form>
 </body>

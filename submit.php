@@ -648,7 +648,13 @@
 	
 	echo $receipt;
 	
-	mail('jcognett@gmu.edu', $subject . 'Product Request ' . $day, $email);
+	$emailString = $email;
 ?>
+<form action="trueSubmit.php" method="post">
+<input type="hidden" name="date" value="<?php echo $date ?>"/>
+<input type="hidden" name="email" value="<?php echo $email ?>"/>
+<input type="hidden" name="subject" value="<?php echo $subject ?>"/>
+<input type="submit"/>
+</form>
 </body>
 </html>
