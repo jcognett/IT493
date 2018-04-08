@@ -626,7 +626,7 @@
 	if ($_POST['SS-100194'] != ""){
 		$email .= 'SS-100194 Speaker/Charger Exchange Fee' . PHP_EOL . "Quantity: " . $_POST['SS-100194'] . PHP_EOL;
 		$receipt .= 'SS-100194 Speaker/Charger Exchange Fee' . '<br/>' . "Quantity: " . $_POST['SS-100194'] . '<br/>';
-		echo "<a href='http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf'>Click here for a printable pdf on speaker returns</a>";
+		echo "<a href='http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf'>Click here for a printable pdf on speaker returns</a> <br/>";
 	}
 	if ($_POST['SS-Knob'] != ""){
 		$email .= "SS-Knob Speaker Volume Nob" . PHP_EOL . "Quantity: " . $_POST['SS-Knob'] . PHP_EOL;
@@ -641,20 +641,20 @@
 	
 	if($_POST['Notes'] !=""){
 		$email .= PHP_EOL . "Notes:" . PHP_EOL . $_POST['Notes'];
-		$receipt .= '<br/>' . "Notes:" . '<br/>' . $_POST['Notes'];
+		$receipt .= '<br/>' . "Notes:" . '<br/>' . $_POST['Notes'] . '<br/>';
 	}
-	
-	$day = date('d-m-Y');
 	
 	echo $receipt;
 	
 	$emailString = $email;
 ?>
 <form action="trueSubmit.php" method="post">
-<input type="hidden" name="date" value="<?php echo $date ?>"/>
 <input type="hidden" name="email" value="<?php echo $email ?>"/>
 <input type="hidden" name="subject" value="<?php echo $subject ?>"/>
+<input type="hidden" name="receipt" value="<?php echo $receipt ?>"/><br/>
+Please include your email for a copy of the order: <input type="text" name="additionalEmail"><br/>
 <input type="submit"/>
 </form>
+<br/><br/>
 </body>
 </html>
