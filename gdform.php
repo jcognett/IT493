@@ -318,7 +318,7 @@ NOTE: Laser Voucher Checks & Deposit Slips orders must go through Accounting Off
 		<th>Quantity</th>
 	</tr>
 	<tr>
-		<td>Gray Sharks, 6"</td>
+		<td>Gray Sharks, 6 Inches</td>
 		<td>48/Box</td> 
 		<td>$32.64</td>
 		<td><input type="number" name="600400-Shk" /></td>
@@ -427,7 +427,7 @@ NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Clic
 	</tr>
 	<tr>
 		<td>Other<input type="text" name="SignOther" /></td>
-		<td></td> 
+		<td></td>
 		<td></td>
 		<td><input type="number" name="SignQuantity" /></td>
 	</tr>

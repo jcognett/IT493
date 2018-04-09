@@ -182,14 +182,14 @@
 			$addressEcho = "Palm Harbor" . '<br/>' . "34200 US Highway 19 N". '<br/>' . "Palm Harbor, FL 34684" . '<br/>' . "727-216-6566" . '<br/>';
 			break;
 		default:
-			$addressEmail = $_POST('Location');
+			$addressEmail = $_POST['Location'];
 	}
 	
 	
 	echo "<h1> Your Order has been placed </h1><br/>";
 	
-	$email .= "Manager Name:" . $_POST['Name'] . PHP_EOL . $addressEmail . PHP_EOL;
-	$receipt .= "Manager Name:" . $_POST['Name'] . '<br/>' . $addressEcho . '<br/>';
+	$email .= "Manager Name: " . $_POST['Name'] . PHP_EOL . $addressEmail . PHP_EOL;
+	$receipt .= "Manager Name: " . $_POST['Name'] . '<br/>' . $addressEcho . '<br/>';
 	
 	
 	//Printer and Toner Supplies
@@ -560,12 +560,12 @@
 		}
 	}
 	
-	//Accessories/Kids Toys
+	//Accessories and Kids Toys
 	$email .= PHP_EOL . "Accessories and Kids Toys" . PHP_EOL;
 	$receipt .= '<br/>' . "<b>Accessories and Kids Toys</b>" . '<br/>';
 	if ($_POST['600400-Shk'] != ""){
-		$email .= '600400-Shk Gray Sharks, 6"' . PHP_EOL . "Quantity: " . $_POST['600400-Shk'] . PHP_EOL;
-		$receipt .= '600400-Shk Gray Sharks, 6"' . '<br/>' . "Quantity: " . $_POST['600400-Shk'] . '<br/>';
+		$email .= '600400-Shk Gray Sharks, 6 Inches' . PHP_EOL . "Quantity: " . $_POST['600400-Shk'] . PHP_EOL;
+		$receipt .= '600400-Shk Gray Sharks, 6 Inches' . '<br/>' . "Quantity: " . $_POST['600400-Shk'] . '<br/>';
 	}
 	if ($_POST['600355'] != ""){
 		$email .= "600355 LeSanford Fluorescent Markers, Various Colors " . PHP_EOL . "Quantity: " . $_POST['600355'] . PHP_EOL;
@@ -640,7 +640,7 @@
 	//Signs
 	if ($_POST['SignFlag'] != ""){
 		$email .= "The Store has requested Signs" . PHP_EOL;
-		$receipt .= "Expect a call regarding the requested signs. <br/>";
+		$receipt .= "Signs have been Requested";
 	}
 	
 	if($_POST['Notes'] !=""){
