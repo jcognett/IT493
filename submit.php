@@ -4,12 +4,13 @@
 <title>Glory Days Product Request Form</title>
 </head>
 <body>
-<h1>Thank you!</h1>
+<h1>Please review your order before you submit.</h1>
 <?php
 	
 	$email = "";
 	$subject = "";
 	$receipt = "";
+	
 	
 	//Extra info
 	if(isset($RushShipping)){
@@ -18,7 +19,10 @@
 	
 	if(isset($Pickup)){
 		$subject .= "Pickup ";
+		$subject .= "Time: " . $_POST['PickTime'];
 	}
+	
+	echo $subject;
 	
 	$addressEmail = "";
 	$addressEcho = "";
