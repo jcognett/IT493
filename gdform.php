@@ -410,7 +410,7 @@ NOTE: ALL MARKETING ORDERS must be ordered through Marketing.
 		<td><input type="number" name="SS-Knob" /></td>
 	</tr>
 </table>
-NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Click here for a printable pdf on speaker returns</a>
+NOTE: <a href="SpeakerReturn.pdf">Click here for a printable pdf on speaker returns</a>
 <br/><br/>
 <table style="width:100%" id = "Signage">
 	<tr>

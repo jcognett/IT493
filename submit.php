@@ -4,7 +4,7 @@
 <title>Glory Days Product Request Form</title>
 </head>
 <body>
-<h1>Please review your order before you submit.</h1>
+<h1>Please review your order before you submit.</h1><br/>
 <?php
 	
 	$email = "";
@@ -184,9 +184,6 @@
 		default:
 			$addressEmail = $_POST['Location'];
 	}
-	
-	
-	echo "<h1> Your Order has been placed </h1><br/>";
 	
 	$email .= "Manager Name: " . $_POST['Name'] . PHP_EOL . $addressEmail . PHP_EOL;
 	$receipt .= "Manager Name: " . $_POST['Name'] . '<br/>' . $addressEcho . '<br/>';
@@ -630,7 +627,7 @@
 	if ($_POST['SS-100194'] != ""){
 		$email .= 'SS-100194 Speaker/Charger Exchange Fee' . PHP_EOL . "Quantity: " . $_POST['SS-100194'] . PHP_EOL;
 		$receipt .= 'SS-100194 Speaker/Charger Exchange Fee' . '<br/>' . "Quantity: " . $_POST['SS-100194'] . '<br/>';
-		echo "<a href='http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf'>Click here for a printable pdf on speaker returns</a> <br/>";
+		echo "<a href='SpeakerReturn.pdf'>Click here for a printable pdf on speaker returns</a> <br/>";
 	}
 	if ($_POST['SS-Knob'] != ""){
 		$email .= "SS-Knob Speaker Volume Nob" . PHP_EOL . "Quantity: " . $_POST['SS-Knob'] . PHP_EOL;
