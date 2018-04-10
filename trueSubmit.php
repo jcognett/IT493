@@ -5,10 +5,11 @@
 </head>
 <body>
 <h1>Thank you!</h1>
-Your order has been submitted to toPromote.com <br/>
-If there are any issues with the order, please call at 703-205-3890<br/><br/>
+Your order has been submitted to ToPromote.com <br/>
+If there are any issues with your order, please call us at 703-205-3890<br/><br/>
 <?php
-	mail('jcognett@gmu.edu', $_POST['subject'] . 'Product Request ' . date('d-m-Y'), $_POST['email']);
+	echo $_POST['subject'];
+	mail('rhashem2@masonlive.gmu.edu', $_POST['subject'] . 'Product Request ' . date('d-m-Y'), $_POST['email']);
 	mail($_POST['additionalEmail'], $_POST['subject'] . 'Product Request ' . date('d-m-Y'), $_POST['email']);
 	echo $_POST['receipt'];
 ?>

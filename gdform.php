@@ -8,7 +8,10 @@
 <link rel = "stylesheet" type="text/css"  href= "ToPromoteFormStyleSheet.css">
 <img src="https://commonmedia.asicentral.com/160000/164530/ToPromote%20Logo%20200x70.png" id = "logo"><br/>
 Phone: 703-205-3890 <br/>
-Form Date: 4/2/2018
+Date: <?php 
+$d=strtotime("today");
+echo date("m-d-Y",$d) . "<br>"; ?>
+
 <body>
 <form action="submit.php" method="post" id="ToPromoteForm">
 Location<select name="Location">
@@ -197,7 +200,7 @@ NOTE: Laser Voucher Checks & Deposit Slips orders must go through Accounting Off
 		<td>HappyChef Black Coat, BK/WH Chalkstripe Pants *</td>
 		<td>Special</td> 
 		<td></td>
-		<td></td>
+		<td><input type="number" name="HC" /></td>
 	</tr>
 	<tr>
 	<td>Sizes for Chef Uniform:</td>
@@ -318,7 +321,7 @@ NOTE: Laser Voucher Checks & Deposit Slips orders must go through Accounting Off
 		<th>Quantity</th>
 	</tr>
 	<tr>
-		<td>Gray Sharks, 6"</td>
+		<td>Gray Sharks, 6 Inches</td>
 		<td>48/Box</td> 
 		<td>$32.64</td>
 		<td><input type="number" name="600400-Shk" /></td>
@@ -410,7 +413,7 @@ NOTE: ALL MARKETING ORDERS must be ordered through Marketing.
 		<td><input type="number" name="SS-Knob" /></td>
 	</tr>
 </table>
-NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Click here for a printable pdf on speaker returns</a>
+NOTE: <a href="SpeakerReturn.pdf">Click here for a printable pdf on speaker returns</a>
 <br/><br/>
 <table style="width:100%" id = "Signage">
 	<tr>
@@ -427,7 +430,7 @@ NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Clic
 	</tr>
 	<tr>
 		<td>Other<input type="text" name="SignOther" /></td>
-		<td></td> 
+		<td></td>
 		<td></td>
 		<td><input type="number" name="SignQuantity" /></td>
 	</tr>
@@ -435,7 +438,7 @@ NOTE: <a href="http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf">Clic
 <br/>
 Comments:<br/>
 <textarea name="Notes" rows="10" cols="50"></textarea><br/><br/>
-NOTE: Pressing submit will place the order, please "Save" your work and review this form before submitting. <br/>
+NOTE: Please click "Save" to save your work and review your order before submitting. <br/>
 <input type="submit" value="Save" /> <input type="reset" />
 <br/><br/><br/>
 </form>

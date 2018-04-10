@@ -4,12 +4,13 @@
 <title>Glory Days Product Request Form</title>
 </head>
 <body>
-<h1>Thank you!</h1>
+<h2>Please review your order to make sure everything is correct</h2><br/>
 <?php
 	
 	$email = "";
 	$subject = "";
 	$receipt = "";
+	
 	
 	//Extra info
 	if(isset($RushShipping)){
@@ -18,7 +19,10 @@
 	
 	if(isset($Pickup)){
 		$subject .= "Pickup ";
+		$subject .= "Time: " . $_POST['PickTime'];
 	}
+	
+	echo $subject;
 	
 	$addressEmail = "";
 	$addressEcho = "";
@@ -178,18 +182,16 @@
 			$addressEcho = "Palm Harbor" . '<br/>' . "34200 US Highway 19 N". '<br/>' . "Palm Harbor, FL 34684" . '<br/>' . "727-216-6566" . '<br/>';
 			break;
 		default:
-			$addressEmail = $_POST('Location');
+			$addressEmail = $_POST['Location'];
 	}
 	
-	
-	echo "<h1> Your Order has been placed </h1><br/>";
-	
-	$email .= "Manager Name:" . $_POST['Name'] . PHP_EOL . $addressEmail . PHP_EOL;
-	$receipt .= "Manager Name:" . $_POST['Name'] . '<br/>' . $addressEcho . '<br/>';
+	$email .= "Manager Name: " . $_POST['Name'] . PHP_EOL . $addressEmail . PHP_EOL;
+	$receipt .= "Manager Name: " . $_POST['Name'] . '<br/>' . $addressEcho . '<br/>';
 	
 	
 	//Printer and Toner Supplies
-	$email .= "Printer and Toner Supplies" . PHP_EOL;
+	$email .= " Printer and Toner Supplies " . PHP_EOL;
+	$email .= "----------------------------" . PHP_EOL;
 	$receipt .= "<b> Printer and Toner Supplies </b>" . '<br/>';
 	if ($_POST['N53866'] != ""){
 		$email .= "N53866 Tamper-Evident Deposit Bags w/ Serial#, 9x12" . PHP_EOL . "Quantity: " . $_POST['N53866'] . PHP_EOL;
@@ -240,12 +242,13 @@
 		$receipt .= "GNQ5949X HP LaserJet 1320 High Yield *   [49X]" . '<br/>' . "Quantity: " . $_POST['GNQ5949X'] . '<br/>';
 	}
 	if ($_POST['QuantityPrinter'] != ""){
-		$email .= $_POST['OtherPrinter'] . PHP_EOL . "Quantity: " . $_POST['QuantityPrinter'] . PHP_EOL;
-		$receipt .= $_POST['OtherPrinter'] . '<br/>' . "Quantity: " . $_POST['QuantityPrinter'] . '<br/>';
+		$email .= "Other Toner/Printer: " . $_POST['OtherPrinter'] . PHP_EOL . "Quantity: " . $_POST['QuantityPrinter'] . PHP_EOL;
+		$receipt .= "Other Toner/Printer: " . $_POST['OtherPrinter'] . '<br/>' . "Quantity: " . $_POST['QuantityPrinter'] . '<br/>';
 	}
 
 	//Custom Prints
 	$email .= PHP_EOL . "Custom Prints" . PHP_EOL;
+	$email .= "----------------------------" . PHP_EOL;
 	$receipt .= '<br/>' . "<b>Custom Prints</b>" . '<br/>';
 	if ($_POST['900141-16AQ'] != ""){
 		$email .= "900141-16AQ Full Color Business Cards, 2-sided *" . PHP_EOL . "Quantity: " . $_POST['900141-16AQ'] . PHP_EOL . $_POST['BCInfo'] .PHP_EOL;
@@ -262,6 +265,7 @@
 	
 	//Uniforms
 	$email .= "Uniforms" . PHP_EOL;
+	$email .= "----------------------------" . PHP_EOL;
 	$receipt .='<br/>' . '<b> Uniforms </b>' . '<br/>';
 	if ($_POST['600281-H'] != ""){
 		$email .= "600281-H Premium Low-Profile Cap, Embroidered" . PHP_EOL . "Quantity: " . $_POST['600281-H'] . PHP_EOL;
@@ -282,6 +286,7 @@
 	//Mens Red T-Shirt
 	if ($_POST['REDMSTSxs'] != "" || $_POST['REDMSTSs'] != "" || $_POST['REDMSTSm'] != "" || $_POST['REDMSTSl'] != "" || $_POST['REDMSTSxl'] != "" || $_POST['REDMSTS2xl'] != "" || $_POST['REDMSTS3xl'] != "" || $_POST['REDMSTS4xl'] != "" || $_POST['REDMSTS5xl'] != "" || $_POST['REDMSTS6xl'] != ""){
 		$email .= "Mens Red SportTek Shirt *  -- Sizes:XS-6XL" . PHP_EOL;
+		$email .= "----------------------------" . PHP_EOL;
 		$receipt .= "Mens Red SportTek Shirt *  -- Sizes:XS-6XL" . '<br/>';
 		if($_POST['REDMSTSxs'] != ""){
 			$email .= "XS: " . $_POST['REDMSTSxs'] . PHP_EOL;
@@ -327,6 +332,7 @@
 	//Mens Black T-Shirt
 	if ($_POST['BLKMSTSxs'] != "" || $_POST['BLKMSTSs'] != "" || $_POST['BLKMSTSm'] != "" || $_POST['BLKMSTSl'] != "" || $_POST['BLKMSTSxl'] != "" || $_POST['BLKMSTS2xl'] != "" || $_POST['BLKMSTS3xl'] != "" || $_POST['BLKMSTS4xl'] != "" || $_POST['BLKMSTS5xl'] != "" || $_POST['BLKMSTS6xl'] != ""){
 		$email .= "Mens Black SportTek Shirt *  -- Sizes:XS-6XL" . PHP_EOL;
+		$email .= "----------------------------" . PHP_EOL;
 		$receipt .= "Mens Black SportTek Shirt *  -- Sizes:XS-6XL" . '<br/>';
 		if($_POST['BLKMSTSxs'] != ""){
 			$email .= "XS: " . $_POST['BLKMSTSxs'] . PHP_EOL;
@@ -372,6 +378,7 @@
 	//Mens Royal T-Shirt
 	if ($_POST['ROYMSTSxs'] != "" || $_POST['ROYMSTSs'] != "" || $_POST['ROYMSTSm'] != "" || $_POST['ROYMSTSl'] != "" || $_POST['ROYMSTSxl'] != "" || $_POST['ROYMSTS2xl'] != "" || $_POST['ROYMSTS3xl'] != "" || $_POST['ROYMSTS4xl'] != "" || $_POST['ROYMSTS5xl'] != "" || $_POST['ROYMSTS6xl'] != ""){
 		$email .= "Mens Royal SportTek Shirt *  -- Sizes:XS-6XL" . PHP_EOL;
+		$email .= "----------------------------" . PHP_EOL;
 		$receipt .= "Mens Royal SportTek Shirt *  -- Sizes:XS-6XL" . '<br/>';
 		if($_POST['ROYMSTSxs'] != ""){
 			$email .= "XS: " . $_POST['ROYMSTSxs'] . PHP_EOL;
@@ -417,6 +424,7 @@
 	//Womens Red T-Shirt
 	if ($_POST['REDLSTSxs'] != "" || $_POST['REDLSTSs'] != "" || $_POST['REDLSTSm'] != "" || $_POST['REDLSTSl'] != "" || $_POST['REDLSTSxl'] != "" || $_POST['REDLSTS2xl'] != "" || $_POST['REDLSTS3xl'] != "" || $_POST['REDLSTS4xl'] != ""){
 		$email .= "Womens Red SportTek Shirt *  -- Sizes:XS-4XL" . PHP_EOL;
+		$email .= "----------------------------" . PHP_EOL;
 		$receipt .= "Womens Red SportTek Shirt *  -- Sizes:XS-4XL" . '<br/>';
 		if($_POST['REDLSTSxs'] != ""){
 			$email .= "XS: " . $_POST['REDLSTSxs'] . PHP_EOL;
@@ -454,6 +462,7 @@
 	//Womens Black T-Shirt
 	if ($_POST['BLKLSTSxs'] != "" || $_POST['BLKLSTSs'] != "" || $_POST['BLKLSTSm'] != "" || $_POST['BLKLSTSl'] != "" || $_POST['BLKLSTSxl'] != "" || $_POST['BLKLSTS2xl'] != "" || $_POST['BLKLSTS3xl'] != "" || $_POST['BLKLSTS4xl'] != ""){
 		$email .= "Womens Black SportTek Shirt *  -- Sizes:XS-4XL" . PHP_EOL;
+		$email .= "----------------------------" . PHP_EOL;
 		$receipt .= "Womens Black SportTek Shirt *  -- Sizes:XS-4XL" . '<br/>';
 		if($_POST['BLKLSTSxs'] != ""){
 			$email .= "XS: " . $_POST['BLKLSTSxs'] . PHP_EOL;
@@ -491,6 +500,7 @@
 	//Womens Royal T-Shirt
 	if ($_POST['ROYLSTSxs'] != "" || $_POST['ROYLSTSs'] != "" || $_POST['ROYLSTSm'] != "" || $_POST['ROYLSTSl'] != "" || $_POST['ROYLSTSxl'] != "" || $_POST['ROYLSTS2xl'] != "" || $_POST['ROYLSTS3xl'] != "" || $_POST['ROYLSTS4xl'] != ""){
 		$email .= "Womens Royal SportTek Shirt *  -- Sizes:XS-4XL" . PHP_EOL;
+		$email .= "----------------------------" . PHP_EOL;
 		$receipt .= "Womens Royal SportTek Shirt *  -- Sizes:XS-4XL" . '<br/>';
 		if($_POST['ROYLSTSxs'] != ""){
 			$email .= "XS: " . $_POST['ROYLSTSxs'] . PHP_EOL;
@@ -529,6 +539,7 @@
 	//Kitchen T-Shirt
 	if ($_POST['KitchenS'] != "" || $_POST['KitchenM'] != "" || $_POST['KitchenL'] != "" || $_POST['KitchenXL'] != "" || $_POST['Kitchen2XL'] != "" || $_POST['Kitchen3XL'] != ""){
 		$email .= "Kitchen T-Shirt, Imprinted" . PHP_EOL;
+		$email .= "----------------------------" . PHP_EOL;
 		$receipt .= "Kitchen T-Shirt, Imprinted" . '<br/>';
 		if($_POST['KitchenS'] != ""){
 			$email .= "S: " . $_POST['KitchenS'] . PHP_EOL;
@@ -556,12 +567,13 @@
 		}
 	}
 	
-	//Accessories/Kids Toys
+	//Accessories and Kids Toys
 	$email .= PHP_EOL . "Accessories and Kids Toys" . PHP_EOL;
+	$email .= "----------------------------" . PHP_EOL;
 	$receipt .= '<br/>' . "<b>Accessories and Kids Toys</b>" . '<br/>';
 	if ($_POST['600400-Shk'] != ""){
-		$email .= '600400-Shk Gray Sharks, 6"' . PHP_EOL . "Quantity: " . $_POST['600400-Shk'] . PHP_EOL;
-		$receipt .= '600400-Shk Gray Sharks, 6"' . '<br/>' . "Quantity: " . $_POST['600400-Shk'] . '<br/>';
+		$email .= '600400-Shk Gray Sharks, 6 Inches' . PHP_EOL . "Quantity: " . $_POST['600400-Shk'] . PHP_EOL;
+		$receipt .= '600400-Shk Gray Sharks, 6 Inches' . '<br/>' . "Quantity: " . $_POST['600400-Shk'] . '<br/>';
 	}
 	if ($_POST['600355'] != ""){
 		$email .= "600355 LeSanford Fluorescent Markers, Various Colors " . PHP_EOL . "Quantity: " . $_POST['600355'] . PHP_EOL;
@@ -594,6 +606,7 @@
 	
 	//Marketing Items
 	$email .= PHP_EOL . "Marketing Items" . PHP_EOL;
+	$email .= "----------------------------" . PHP_EOL;
 	$receipt .= '<br/>' . "<b>Marketing Items</b>" . '<br/>';
 	if ($_POST['CoachS'] != "" || $_POST['CoachM'] != "" || $_POST['CoachL'] != "" || $_POST['CoachXL'] != "" || $_POST['Coach2XL'] != ""){
 		$email .= "Coach Shirt" . PHP_EOL;
@@ -622,11 +635,12 @@
 	
 	//Speakers and Accessories
 	$email .= PHP_EOL . "Speaker and Accessories" . PHP_EOL;
+	$email .= "----------------------------" . PHP_EOL;
 	$receipt .= '<br/>' . "<b>Speaker and Accessories</b>" . '<br/>';
 	if ($_POST['SS-100194'] != ""){
 		$email .= 'SS-100194 Speaker/Charger Exchange Fee' . PHP_EOL . "Quantity: " . $_POST['SS-100194'] . PHP_EOL;
 		$receipt .= 'SS-100194 Speaker/Charger Exchange Fee' . '<br/>' . "Quantity: " . $_POST['SS-100194'] . '<br/>';
-		echo "<a href='http://helios.ite.gmu.edu/~jcognett/IT493/SpeakerReturn.pdf'>Click here for a printable pdf on speaker returns</a> <br/>";
+		echo "<a href='SpeakerReturn.pdf'>Click here for a printable pdf on speaker returns</a> <br/>";
 	}
 	if ($_POST['SS-Knob'] != ""){
 		$email .= "SS-Knob Speaker Volume Nob" . PHP_EOL . "Quantity: " . $_POST['SS-Knob'] . PHP_EOL;
@@ -636,7 +650,7 @@
 	//Signs
 	if ($_POST['SignFlag'] != ""){
 		$email .= "The Store has requested Signs" . PHP_EOL;
-		$receipt .= "Expect a call regarding the requested signs. <br/>";
+		$receipt .= "Signs have been Requested";
 	}
 	
 	if($_POST['Notes'] !=""){
@@ -652,8 +666,8 @@
 <input type="hidden" name="email" value="<?php echo $email ?>"/>
 <input type="hidden" name="subject" value="<?php echo $subject ?>"/>
 <input type="hidden" name="receipt" value="<?php echo $receipt ?>"/><br/>
-Please include your email for a copy of the order: <input type="text" name="additionalEmail"><br/>
-<input type="submit"/>
+Please include your email to receive a copy of your order: <input type="text" name="additionalEmail"><br/>
+<input type="submit" value="Submit Order"/>
 </form>
 <br/><br/>
 </body>
