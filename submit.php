@@ -4,17 +4,12 @@
 <title>Glory Days Product Request Form</title>
 </head>
 <body>
-<<<<<<< HEAD
 <h2>Please review your order to make sure everything is correct</h2><br/>
-=======
-<h1>Please review your order before you submit.</h1><br/>
->>>>>>> b935b072ffc17526cf83edee7f85c4ccd401169c
 <?php
 	
 	$email = "";
 	$subject = "";
 	$receipt = "";
-	
 	
 	//Extra info
 	if(isset($RushShipping)){

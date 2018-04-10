@@ -9,11 +9,7 @@ Your order has been submitted to ToPromote.com <br/>
 If there are any issues with your order, please call us at 703-205-3890<br/><br/>
 <?php
 	echo $_POST['subject'];
-<<<<<<< HEAD
-	mail('rhashem2@masonlive.gmu.edu', $_POST['subject'] . 'Product Request ' . date('d-m-Y'), $_POST['email']);
-=======
 	mail('jcognett@gmu.edu', $_POST['subject'] . 'Product Request ' . date('d-m-Y'), $_POST['email']);
->>>>>>> b935b072ffc17526cf83edee7f85c4ccd401169c
 	mail($_POST['additionalEmail'], $_POST['subject'] . 'Product Request ' . date('d-m-Y'), $_POST['email']);
 	echo $_POST['receipt'];
 ?>
