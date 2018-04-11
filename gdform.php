@@ -8,9 +8,7 @@
 <link rel = "stylesheet" type="text/css"  href= "ToPromoteFormStyleSheet.css">
 <img src="https://commonmedia.asicentral.com/160000/164530/ToPromote%20Logo%20200x70.png" id = "logo"><br/>
 Phone: 703-205-3890 <br/>
-Date: <?php 
-$d=strtotime("today");
-echo date("m-d-Y",$d) . "<br>"; ?>
+Date: 4/11/2018 <br/>
 
 <body>
 <form action="submit.php" method="post" id="ToPromoteForm">
@@ -45,8 +43,8 @@ Location<select name="Location">
   <option value="PalmHarbor">Palm Harbor</option>
 </select>
 Ordered By<input type="text" name="Name" required/><br/>
-RUSH Shipping (Additional Fee)<input type="checkbox" name="RushShipping"/><br/>
-Pickup<input type="checkbox" name="Pickup" value="True"/>Time:<input type="text" name="PickTime" />
+RUSH Shipping (Additional Fee)<input type="checkbox" name="RushShipping" value="Rush"/><br/>
+Pickup<input type="checkbox" name="Pickup" value="Pickup"/>Time:<input type="text" name="PickTime" />
 
 <table style="width:100%" id = "Printer">
 	<tr>

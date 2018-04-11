@@ -12,16 +12,16 @@
 	$receipt = "";
 	
 	//Extra info
-	if(isset($RushShipping)){
+	if($_POST['RushShipping'] == 'Rush'){
 		$subject .= "RUSH ";
+		echo $subject . '<br/>';
 	}
 	
-	if(isset($Pickup)){
+	if($_POST['Pickup'] == 'Pickup'){
 		$subject .= "Pickup ";
 		$subject .= "Time: " . $_POST['PickTime'];
+		echo $subject . '<br/>';
 	}
-	
-	echo $subject;
 	
 	$addressEmail = "";
 	$addressEcho = "";
