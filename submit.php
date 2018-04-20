@@ -10,6 +10,7 @@
 	$email = "";
 	$subject = "";
 	$receipt = "";
+	$locationEmail = "";
 	
 	//Extra info
 	if($_POST['RushShipping'] == 'Rush'){
@@ -31,154 +32,192 @@
 		case "EDGEWATER":
 			$addressEmail = "Edgewater" . PHP_EOL . "3 Lee Airpark Dr" . PHP_EOL . "Edgewater, MD 21037" . PHP_EOL . "443-808-8880" . PHP_EOL;
 			$addressEcho = "Edgewater" . '<br/>' . "3 Lee Airpark Dr" . '<br/>' . "Edgewater, MD 21037" . '<br/>' . "443-808-8880" . '<br/>';
+			$locationEmail = "edgewater@glorydaysgrill.com";
 			break;
 		case "ELDERSBURG":
 			$addressEmail = "Eldersburg" . PHP_EOL . "1348 Liberty Rd". PHP_EOL . "Eldersburg, MD 21784-6411" . PHP_EOL . "410-552-5160" . PHP_EOL;
 			$addressEcho = "Eldersburg" . '<br/>' . "1348 Liberty Rd". '<br/>' . "Eldersburg, MD 21784-6411" . '<br/>' . "410-552-5160" . '<br/>';
+			$locationEmail = "eldersburg@glorydaysgrill.com";
 			break;
 		case "ELLICOTT":
 			$addressEmail = "Ellicott City" . PHP_EOL . "10035 Baltimore National Pike". PHP_EOL . "Ellicott City, MD 21042" . PHP_EOL . "410-480-2300" . PHP_EOL;
 			$addressEcho = "Ellicott City" . '<br/>' . "10035 Baltimore National Pike". '<br/>' . "Ellicott City, MD 21042" . '<br/>' . "410-480-2300" . '<br/>';
+			$locationEmail = "ellicottcity@glorydaysgrill.com";
 			break;
 		case "FREDERICK":
 			$addressEmail = "Frederick" . PHP_EOL . "1305 W. 7th St". PHP_EOL . "Frederick, MD 21702-410" . PHP_EOL . "301-696-1112" . PHP_EOL;
 			$addressEcho = "Frederick" . '<br/>' . "1305 W. 7th St". '<br/>' . "Frederick, MD 21702-410" . '<br/>' . "301-696-1112" . '<br/>';
+			$locationEmail = "frederick@glorydaysgrill.com";
 			break;
 		case "GLEN BURNIE":
 			$addressEmail = "Glen Burnie/Pasadena" . PHP_EOL . "7939 Ritchie Hwy". PHP_EOL . "Glen Burnie, MD 21061" . PHP_EOL . "443-749-4376" . PHP_EOL;
 			$addressEcho = "Glen Burnie/Pasadena" . '<br/>' . "7939 Ritchie Hwy". '<br/>' . "Glen Burnie, MD 21061" . '<br/>' . "443-749-4376" . '<br/>';
+			$locationEmail = "pasadena@glorydaysgrill.com";
 			break;
 		case "PASADENA":
 			$addressEmail = "Glen Burnie/Pasadena" . PHP_EOL . "7939 Ritchie Hwy". PHP_EOL . "Glen Burnie, MD 21061" . PHP_EOL . "443-749-4376" . PHP_EOL;
 			$addressEcho = "Glen Burnie/Pasadena" . '<br/>' . "7939 Ritchie Hwy". '<br/>' . "Glen Burnie, MD 21061" . '<br/>' . "443-749-4376" . '<br/>';
+			$locationEmail = "pasadena@glorydaysgrill.com";
 			break;
 		case "GLEN BURNIE/PASADENA":
 			$addressEmail = "Glen Burnie/Pasadena" . PHP_EOL . "7939 Ritchie Hwy". PHP_EOL . "Glen Burnie, MD 21061" . PHP_EOL . "443-749-4376" . PHP_EOL;
 			$addressEcho = "Glen Burnie/Pasadena" . '<br/>' . "7939 Ritchie Hwy". '<br/>' . "Glen Burnie, MD 21061" . '<br/>' . "443-749-4376" . '<br/>';
+			$locationEmail = "pasadena@glorydaysgrill.com";
 			break;
 		case "TOWSON":
 			$addressEmail = "Towson" . PHP_EOL . "1220 E. Joppa Rd". PHP_EOL . "Towson, MD 21286" . PHP_EOL . "443-901-0270" . PHP_EOL;
 			$addressEcho = "Towson" . '<br/>' . "1220 E. Joppa Rd". '<br/>' . "Towson, MD 21286" . '<br/>' . "443-901-0270" . '<br/>';
+			$locationEmail = "towson@glorydaysgrill.com";
 			break;
 		case "RANSON":
 			$addressEmail = "Ranson/Charles Town" . PHP_EOL . "190 Oak Lee Dr". PHP_EOL . "Ranson, WV 25438-487" . PHP_EOL . "304-728-9000" . PHP_EOL;
 			$addressEcho = "Ranson/Charles Town" . '<br/>' . "190 Oak Lee Dr". '<br/>' . "Ranson, WV 25438-487" . '<br/>' . "304-728-9000" . '<br/>';
+			$locationEmail = "ranson@glorydaysgrill.com";
 			break;
 		case "CHARLES TOWN":
 			$addressEmail = "Ranson/Charles Town" . PHP_EOL . "190 Oak Lee Dr". PHP_EOL . "Ranson, WV 25438-487" . PHP_EOL . "304-728-9000" . PHP_EOL;
 			$addressEcho = "Ranson/Charles Town" . '<br/>' . "190 Oak Lee Dr". '<br/>' . "Ranson, WV 25438-487" . '<br/>' . "304-728-9000" . '<br/>';
+			$locationEmail = "ranson@glorydaysgrill.com";
 			break;
 		case "RANSON/CHARLES TOWN":
 			$addressEmail = "Ranson/Charles Town" . PHP_EOL . "190 Oak Lee Dr". PHP_EOL . "Ranson, WV 25438-487" . PHP_EOL . "304-728-9000" . PHP_EOL;
 			$addressEcho = "Ranson/Charles Town" . '<br/>' . "190 Oak Lee Dr". '<br/>' . "Ranson, WV 25438-487" . '<br/>' . "304-728-9000" . '<br/>';
+			$locationEmail = "ranson@glorydaysgrill.com";
 			break;
 		case "BARCROFT PLAZA":
 			$addressEmail = "Barcroft Plaza" . PHP_EOL . "6341 Columbia Pike". PHP_EOL . "Falls Church, VA 22041" . PHP_EOL . "703-992-6060" . PHP_EOL;
 			$addressEcho = "Barcroft Plaza" . '<br/>' . "6341 Columbia Pike". '<br/>' . "Falls Church, VA 22041" . '<br/>' . "703-992-6060" . '<br/>';
+			$locationEmail = "barcroft@glorydaysgrill.com";
 			break;
 		case "BARCROFT":
 			$addressEmail = "Barcroft Plaza" . PHP_EOL . "6341 Columbia Pike". PHP_EOL . "Falls Church, VA 22041" . PHP_EOL . "703-992-6060" . PHP_EOL;
 			$addressEcho = "Barcroft Plaza" . '<br/>' . "6341 Columbia Pike". '<br/>' . "Falls Church, VA 22041" . '<br/>' . "703-992-6060" . '<br/>';
+			$locationEmail = "barcroft@glorydaysgrill.com";
 			break;
 		case "BURKE":
 			$addressEmail = "Burke" . PHP_EOL . "9526 Old Keene Mill Rd". PHP_EOL . "Burke, VA 22015-4208" . PHP_EOL . "703-866-1911" . PHP_EOL;
 			$addressEcho = "Burke" . '<br/>' . "9526 Old Keene Mill Rd". '<br/>' . "Burke, VA 22015-4208" . '<br/>' . "703-866-1911" . '<br/>';
+			$locationEmail = "burke@glorydaysgrill.com";
 			break;
 		case "CENTREVILLE":
 			$addressEmail = "Centreville" . PHP_EOL . "13850 Braddock Rd". PHP_EOL . "Centreville, VA 20121-2452" . PHP_EOL . "703-266-4100" . PHP_EOL;
 			$addressEcho = "Centreville" . '<br/>' . "13850 Braddock Rd". '<br/>' . "Centreville, VA 20121-2452" . '<br/>' . "703-266-4100" . '<br/>';
+			$locationEmail = "centreville@glorydaysgrill.com";
 			break;
 		case "CULPEPER":
 			$addressEmail = "Culpeper" . PHP_EOL . "15295 Montanus Dr". PHP_EOL . "Culpeper, VA 22701-2524" . PHP_EOL . "540-829-7133" . PHP_EOL;
 			$addressEcho = "Culpeper" . '<br/>' . "15295 Montanus Dr". '<br/>' . "Culpeper, VA 22701-2524" . '<br/>' . "540-829-7133" . '<br/>';
+			$locationEmail = "culpeper@glorydaysgrill.com";
 			break;
 		case "FAIRFAX":
 			$addressEmail = "Fairfax" . PHP_EOL . "3059 Nutley St". PHP_EOL . "Fairfax, VA 22031-1931" . PHP_EOL . "703-204-0900" . PHP_EOL;
 			$addressEcho = "Fairfax" . '<br/>' . "3059 Nutley St". '<br/>' . "Fairfax, VA 22031-1931" . '<br/>' . "703-204-0900" . '<br/>';
+			$locationEmail = "fairfax@glorydaysgrill.com";
 			break;
 		case "GAINESVILLE":
 			$addressEmail = "Gainesville" . PHP_EOL . "7581 Somerset Crossing Dr". PHP_EOL . "Gainesville, VA 20155-4873" . PHP_EOL . "571-261-1500" . PHP_EOL;
 			$addressEcho = "Gainesville" . '<br/>' . "7581 Somerset Crossing Dr". '<br/>' . "Gainesville, VA 20155-4873" . '<br/>' . "571-261-1500" . '<br/>';
+			$locationEmail = "gainesville@glorydaysgrill.com";
 			break;
 		case "LORTON":
 			$addressEmail = "Lorton" . PHP_EOL . "9459 Lorton Market St". PHP_EOL . "Lorton, VA 22079-1963" . PHP_EOL . "703-372-1770" . PHP_EOL;
 			$addressEcho = "Lorton" . '<br/>' . "9459 Lorton Market St". '<br/>' . "Lorton, VA 22079-1963" . '<br/>' . "703-372-1770" . '<br/>';
+			$locationEmail = "lorton@glorydaysgrill.com";
 			break;
 		case "MANASSAS":
 			$addressEmail = "Manassas" . PHP_EOL . "9516 Liberia Ave". PHP_EOL . "Manassas, VA 20110-1719" . PHP_EOL . "703-361-9040" . PHP_EOL;
 			$addressEcho = "Manassas" . '<br/>' . "9516 Liberia Ave". '<br/>' . "Manassas, VA 20110-1719" . '<br/>' . "703-361-9040" . '<br/>';
+			$locationEmail = "manassas@glorydaysgrill.com";
 			break;
 		case "NORTHPOINT":
 			$addressEmail = "Reston at North Point Village Center" . PHP_EOL . "1400 North Point Village Center". PHP_EOL . "Reston, VA 20194" . PHP_EOL . "571-926-9700" . PHP_EOL;
 			$addressEcho = "Reston at North Point Village Center" . '<br/>' . "1400 North Point Village Center". '<br/>' . "Reston, VA 20194" . '<br/>' . "571-926-9700" . '<br/>';
+			$locationEmail = "northpoint@glorydaysgrill.com";
 			break;
 		case "FOXMILL":
 			$addressEmail = "Reston/Herndon at Fox Mill Shopping Center" . PHP_EOL . "Fox Mill Shopping Center". PHP_EOL . "2567 John Milton Dr" . PHP_EOL . "Herndon, VA 20171-2527" . PHP_EOL . "703-390-5555" . PHP_EOL;
 			$addressEcho = "Reston/Herndon at Fox Mill Shopping Center" . '<br/>' . "Fox Mill Shopping Center". '<br/>' . "2567 John Milton Dr" . '<br/>' . "Herndon, VA 20171-2527" . '<br/>' . "703-390-5555" . '<br/>';
+			$locationEmail = "reston@glorydaysgrill.com";
 			break;
 		case "GLENEAGLES":
 			$addressEmail = "Richmond at Gleneagles Center" . PHP_EOL . "Gleneagles Center". PHP_EOL . "10466 Ridgefield Pkwy" . PHP_EOL . "Richmond, VA 23233-3548" . PHP_EOL . "804-754-3710" . PHP_EOL;
 			$addressEcho = "Richmond at Gleneagles Center" . '<br/>' . "Gleneagles Center". '<br/>' . "10466 Ridgefield Pkwy" . '<br/>' . "Richmond, VA 23233-3548" . '<br/>' . "804-754-3710" . '<br/>';
+			$locationEmail = "reston@glorydaysgrill.com";
 			break;
 		case "HARBOURSIDE":
 			$addressEmail = "Richmond at Harbourside Center Loop" . PHP_EOL . "6151 Harbourside Centre Loop". PHP_EOL . "Midlothian, VA 23112-2162" . PHP_EOL . "804-608-8350" . PHP_EOL;
 			$addressEcho = "Richmond at Harbourside Center Loop" . '<br/>' . "6151 Harbourside Centre Loop". '<br/>' . "Midlothian, VA 23112-2162" . '<br/>' . "804-608-8350" . '<br/>';
+			$locationEmail = "reston@glorydaysgrill.com";
 			break;
 		case "STONE RIDGE":
 			$addressEmail = "Stone Ridge/South Riding" . PHP_EOL . "42010 Village Ctr. Plz". PHP_EOL . "Stone Ridge, VA 20105-3032" . PHP_EOL . "703-327-8811" . PHP_EOL;
 			$addressEcho = "Stone Ridge/South Riding" . '<br/>' . "42010 Village Ctr. Plz". '<br/>' . "Stone Ridge, VA 20105-3032" . '<br/>' . "703-327-8811" . '<br/>';
+			$locationEmail = "stoneridge@glorydaysgrill.com";
 			break;
 		case "SOUTH RIDING":
 			$addressEmail = "Stone Ridge/South Riding" . PHP_EOL . "42010 Village Ctr. Plz". PHP_EOL . "Stone Ridge, VA 20105-3032" . PHP_EOL . "703-327-8811" . PHP_EOL;
 			$addressEcho = "Stone Ridge/South Riding" . '<br/>' . "42010 Village Ctr. Plz". '<br/>' . "Stone Ridge, VA 20105-3032" . '<br/>' . "703-327-8811" . '<br/>';
+			$locationEmail = "stoneridge@glorydaysgrill.com";
 			break;
 		case "STONE RIDGE/SOUTH RIDING":
 			$addressEmail = "Stone Ridge/South Riding" . PHP_EOL . "42010 Village Ctr. Plz". PHP_EOL . "Stone Ridge, VA 20105-3032" . PHP_EOL . "703-327-8811" . PHP_EOL;
 			$addressEcho = "Stone Ridge/South Riding" . '<br/>' . "42010 Village Ctr. Plz". '<br/>' . "Stone Ridge, VA 20105-3032" . '<br/>' . "703-327-8811" . '<br/>';
+			$locationEmail = "stoneridge@glorydaysgrill.com";
 			break;
 		case "WINCHESTER":
 			$addressEmail = "Winchester" . PHP_EOL . "130 Featherbed Ln". PHP_EOL . "Winchester, VA 22601-4435" . PHP_EOL . "540-662-9922" . PHP_EOL;
 			$addressEcho = "Winchester" . '<br/>' . "130 Featherbed Ln". '<br/>' . "Winchester, VA 22601-4435" . '<br/>' . "540-662-9922" . '<br/>';
+			$locationEmail = "winchester@glorydaysgrill.com";
 			break;
 		case "APEX":
 			$addressEmail = "Apex" . PHP_EOL . "Publix Pointe Shopping Center". PHP_EOL . "1413 Kelly Rd" . PHP_EOL . "Apex, NC 27502" . PHP_EOL . "919-629-6111" . PHP_EOL;
 			$addressEcho = "Apex" . '<br/>' . "Publix Pointe Shopping Center". '<br/>' . "1413 Kelly Rd" . '<br/>' . "Apex, NC 27502" . '<br/>' . "919-629-6111" . '<br/>';
+			$locationEmail = "apex@glorydaysgrill.com";
 			break;
 		case "4TH STREET":
 			$addressEmail = "4th Street, St Petersburg" . PHP_EOL . "9900 4th St". PHP_EOL . "St Petersburg, FL 33702" . PHP_EOL . "727-214-1623" . PHP_EOL;
 			$addressEcho = "4th Street, St Petersburg" . '<br/>' . "9900 4th St". '<br/>' . "St Petersburg, FL 33702" . '<br/>' . "727-214-1623" . '<br/>';
+			$locationEmail = "";
 			break;
 		case "STPETERSBURG":
 			$addressEmail = "4th Street, St Petersburg" . PHP_EOL . "9900 4th St". PHP_EOL . "St Petersburg, FL 33702" . PHP_EOL . "727-214-1623" . PHP_EOL;
 			$addressEcho = "4th Street, St Petersburg" . '<br/>' . "9900 4th St". '<br/>' . "St Petersburg, FL 33702" . '<br/>' . "727-214-1623" . '<br/>';
+			$locationEmail = "stpete@gdgflorida.com";
 			break;
 		case "BRANDON":
 			$addressEmail = "Brandon" . PHP_EOL . "11310 Causeway Blvd". PHP_EOL . "Brandon, FL 33511" . PHP_EOL . "813-654-5454" . PHP_EOL;
 			$addressEcho = "Brandon" . '<br/>' . "11310 Causeway Blvd". '<br/>' . "Brandon, FL 33511" . '<br/>' . "813-654-5454" . '<br/>';
+			$locationEmail = "brandon@gdgflorida.com";
 			break;
 		case "CARROLLWOOD":
 			$addressEmail = "Carrollwood" . PHP_EOL . "14457 N. Dale Mabry Hwy". PHP_EOL . "Tampa, FL 33618" . PHP_EOL . "813-374-0123" . PHP_EOL;
 			$addressEcho = "Carrollwood" . '<br/>' . "14457 N. Dale Mabry Hwy". '<br/>' . "Tampa, FL 33618" . '<br/>' . "813-374-0123" . '<br/>';
+			$locationEmail = "carrollwood@gdgflorida.com";
 			break;
 		case "LAKELAND":
 			$addressEmail = "Lakeland" . PHP_EOL . "3790 Lakeside Village Ct". PHP_EOL . "Lakeland, FL 33803" . PHP_EOL . "863-225-8958" . PHP_EOL;
 			$addressEcho = "Lakeland" . '<br/>' . "3790 Lakeside Village Ct". '<br/>' . "Lakeland, FL 33803" . '<br/>' . "863-225-8958" . '<br/>';
+			$locationEmail = "lakeland@gdgflorida.com";
 			break;
 		case "NEWTAMPA":
 			$addressEmail = "New Tampa" . PHP_EOL . "17508 Dona Michelle Dr". PHP_EOL . "Tampa, FL 33647" . PHP_EOL . "813-513-7550" . PHP_EOL;
 			$addressEcho = "New Tampa" . '<br/>' . "17508 Dona Michelle Dr". '<br/>' . "Tampa, FL 33647" . '<br/>' . "813-513-7550" . '<br/>';
+			$locationEmail = "newtampa@gdgflorida.com";
 			break;
 		case "TAMPA":
 			$addressEmail = "New Tampa" . PHP_EOL . "17508 Dona Michelle Dr". PHP_EOL . "Tampa, FL 33647" . PHP_EOL . "813-513-7550" . PHP_EOL;
 			$addressEcho = "New Tampa" . '<br/>' . "17508 Dona Michelle Dr". '<br/>' . "Tampa, FL 33647" . '<br/>' . "813-513-7550" . '<br/>';
+			$locationEmail = "newtampa@gdgflorida.com";
 			break;
 		case "ODESSA":
 			$addressEmail = "Odessa" . PHP_EOL . "16553 Pointe Village Dr". PHP_EOL . "Lutz, FL 33558" . PHP_EOL . "813-616-2600" . PHP_EOL;
 			$addressEcho = "Odessa" . '<br/>' . "16553 Pointe Village Dr". '<br/>' . "Lutz, FL 33558" . '<br/>' . "813-616-2600" . '<br/>';
+			$locationEmail = "";
 			break;
 		case "PALMHARBOR":
 			$addressEmail = "Palm Harbor" . PHP_EOL . "34200 US Highway 19 N". PHP_EOL . "Palm Harbor, FL 34684" . PHP_EOL . "727-216-6566" . PHP_EOL;
 			$addressEcho = "Palm Harbor" . '<br/>' . "34200 US Highway 19 N". '<br/>' . "Palm Harbor, FL 34684" . '<br/>' . "727-216-6566" . '<br/>';
+			$locationEmail = "palmharbor@gdgflorida.com";
 			break;
 		default:
 			$addressEmail = $_POST['Location'];
@@ -215,14 +254,6 @@
 	if ($_POST['200201A'] != ""){
 		$email .= "200201A HP LaserJet Pro M201DW *   [83X]" . PHP_EOL . "Quantity: " . $_POST['200201A'] . PHP_EOL;
 		$receipt .= "200201A HP LaserJet Pro M201DW *   [83X]" . '<br/>' . "Quantity: " . $_POST['200201A'] . '<br/>';
-	}
-	if ($_POST['200201B'] != ""){
-		$email .= "200201B HP OffJet Pro 8600/10 COLOR 4pk *   [950XL/951XL]" . PHP_EOL . "Quantity: " . $_POST['200201B'] . PHP_EOL;
-		$receipt .= "200201B HP OffJet Pro 8600/10 COLOR 4pk *   [950XL/951XL]" . '<br/>' . "Quantity: " . $_POST['200201B'] . '<br/>';
-	}
-	if ($_POST['200201C'] != ""){
-		$email .= "200201C Samsung Toner for M2625D *   [MLT-D116L]" . PHP_EOL . "Quantity: " . $_POST['200201C'] . PHP_EOL;
-		$receipt .= "200201C Samsung Toner for M2625D *   [MLT-D116L]" . '<br/>' . "Quantity: " . $_POST['200201C'] . '<br/>';
 	}
 	if ($_POST['200201D'] != ""){
 		$email .= "200201D Brother HLL2320D Mono Laser Printer *   [TN660]" . PHP_EOL . "Quantity: " . $_POST['200201D'] . PHP_EOL;
@@ -275,7 +306,7 @@
 		$receipt .= "600283 Apron, 3-Pockets, Black" . '<br/>' . "Quantity: " . $_POST['600283'] . '<br/>';
 	}
 	if ($_POST['400110'] != ""){
-		$email .= "400110 Color Nametag with Magnetic Black, Personalized *" . PHP_EOL . "Quantity: " . $_POST['400110'] . PHP_EOL . $_POST['NTInfo'];
+		$email .= "400110 Color Nametag with Magnetic Black, Personalized *" . PHP_EOL . "Quantity: " . $_POST['400110'] . PHP_EOL . $_POST['NTInfo'] .PHP_EOL;
 		$receipt .= "400110 Color Nametag with Magnetic Black, Personalized *" . '<br/>' . "Quantity: " . $_POST['400110'] . '<br/>' . $_POST['NTInfo'] .'<br/>';
 	}
 	if ($_POST['HCInfo'] != ""){
@@ -575,8 +606,8 @@
 		$receipt .= '600400-Shk Gray Sharks, 6 Inches' . '<br/>' . "Quantity: " . $_POST['600400-Shk'] . '<br/>';
 	}
 	if ($_POST['600355'] != ""){
-		$email .= "600355 LeSanford Fluorescent Markers, Various Colors " . PHP_EOL . "Quantity: " . $_POST['600355'] . PHP_EOL;
-		$receipt .= "600355 LeSanford Fluorescent Markers, Various Colors " . '<br/>' . "Quantity: " . $_POST['600355'] . '<br/>';
+		$email .= "600355 Sanford Fluorescent Markers, Various Colors " . PHP_EOL . "Quantity: " . $_POST['600355'] . PHP_EOL;
+		$receipt .= "600355 Sanford Fluorescent Markers, Various Colors " . '<br/>' . "Quantity: " . $_POST['600355'] . '<br/>';
 	}
 	if ($_POST['600356'] != ""){
 		$email .= "600356 Reusable Wine Bottle PLastic ID Tags, Blank" . PHP_EOL . "Quantity: " . $_POST['600356'] . PHP_EOL;
@@ -663,10 +694,11 @@
 ?>
 <form action="trueSubmit.php" method="post">
 <input type="hidden" name="email" value="<?php echo $email ?>"/>
+<input type="hidden" name="locationEmail" value="<?php echo $locationEmail ?>"/><br/>
 <input type="hidden" name="subject" value="<?php echo $subject ?>"/>
 <input type="hidden" name="receipt" value="<?php echo $receipt ?>"/><br/>
-Please include your email to receive a copy of your order: <input type="text" name="additionalEmail"><br/>
-<input type="submit" value="Submit Order"/>
+<input type="submit" value="Submit Order"/> 
+Please click the back button on your browser to make any changes.  
 </form>
 <br/><br/>
 </body>

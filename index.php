@@ -26,11 +26,11 @@
             if (isset($_POST['login']) && !empty($_POST['username']) 
                && !empty($_POST['password'])) {
 				//Here is where you change the password
-               if ($_POST['username'] == 'Admin' && $_POST['password'] == '1234') {
+               if ($_POST['username'] == 'Admin' && $_POST['password'] == 'ChaharGoofs@PHP.2017-18') {
 					header("Location: gdform.php");
 					die();
                }
-			   if ($_POST['username'] == 'GloryDays' && $_POST['password'] == '1234') {
+			   if ($_POST['username'] == 'GloryDays' && $_POST['password'] == '2Use4GDGForm') {
 					header("Location: gdform.php");
 					die();
 			   }					
